@@ -1,0 +1,167 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-sm-4
+    h2 = t('Companies')
+    ol.breadcrumb
+      li
+        a href="#{url_for :controller => 'companies', :action => 'index'}" = t('Home')
+      li.active
+        strong = t('Companies')
+
+.row
+  .col-lg-9
+    .wrapper.wrapper-content.animated.fadeInUp
+      .ibox
+        .ibox-content
+          .row
+            .col-lg-12
+              .m-b-md
+                = link_to t('Edit'), '/companies/1/edit', class: "btn btn-white btn-xs pull-right"
+                - @companies.each do |company|
+                  h2 = company.name
+              .dl-horizontal
+                dt
+                  = t('Status')
+                  | :
+                dd
+                  span class="label label-primary" = t('Active')
+          .row
+            .col-lg-5
+              .dl-horizontal
+                dt
+                  = t('Created by')
+                  | :
+                dd = current_user.name.to_s
+                dt Повідомлень:
+                dd 162
+            .col-lg-7#cluster_info
+              dl.dl-horizontal
+                dt Останнє оновлення:
+                dd 16.06.2015 12:15:57
+                dt Зарєестрована:
+                dd 10.05.2015 23:36:57
+                dt Представники:
+                dd.project-people
+                  a href=""
+                    img alt="image" class="img-circle" src="#{image_path('a1.jpg')}"
+          .row
+            .col-lg-12
+              dl.dl-horizontal
+                dt Завершений:
+                dd
+                  div[class="progress progress-striped active m-b-sm"]
+                    div[style="width: 60%;" class="progress-bar"]
+                  small Проект завершено в 60%
+                  '
+                  small Залишилося близько проект, підписати договір і рахунок - фактуру.
+
+          .row.m-t-sm
+            .col-lg-12
+              .panel.blank-panel
+                .panel-heading
+                  .panel-options
+                    ul.nav.nav-tabs
+                      li.active
+                        a[href="#tab-1" data-toggle="tab"] Повідомлення
+                      li
+                        a[href="#tab-2" data-toggle="tab"] Остання активність
+                .panel-body
+                  .tab-content
+                    .tab-pane.active#tab-1
+                      .feed-activity-list
+                        .feed-element
+                          a[href="#" class="pull-left"]
+                            img[alt="image" class="img-circle" src="#{image_path('a4.jpg')}"]
+                          .media-body
+                            small.pull-right 2 години тому
+                            strong Дима Соколов
+                            '
+                            | опубліковане повідомлення для
+                            '
+                            strong Сергей Берюков
+                            br
+                            small.text-muted Сьогодні 09:10 - 19.06.2015
+                            .well
+                              Судові пристави у середу повідомили російські установи в Бельгії
+                              про підготовку до арешту майна.
+                        .feed-element
+                          a[href="#" class="pull-left"]
+                            img[alt="image" class="img-circle" src="#{image_path('a3.jpg')}"]
+                          .media-body
+                            small.pull-right 1 годину тому
+                            strong Ольга Бирюкова
+                            '
+                            | додана 1 фото на ...
+                            br
+                            small.text-muted 2 днів тому в 18:30
+
+                    .tab-pane#tab-2
+                      table.table.table-striped
+                        thead
+                          tr
+                            th Статус
+                            th Назва
+                            th Початок
+                            th Закінчення
+                            th Коментарі
+                        tbody
+                          tr
+                            td
+                              span.label.label-primary
+                                i.fa.fa-check
+                                '
+                                | Завершений 
+                            td Створення проекту в веб
+                            td 12.06.2015 10:10:1
+                            td 14.06.2015 10:16:36
+                            td
+                              p.small
+                                Презентувала новий музичний сервіс.
+                          tr
+                            td
+                              span.label.label-primary
+                                i.fa.fa-check
+                                '
+                                | Прийняті 
+                            td Створення проекту додаток
+                            td 12.06.2015 10:10:1
+                            td 14.06.2015 10:16:36
+                            td
+                              p.small
+                                Ми будемо працювати через системи відповідних країн.
+  .col-lg-3
+    .wrapper.wrapper-content
+      h4 = t('Company description')
+      - @companies.each do |company|
+        = image_tag company.logo_url.to_s, class: "img-responsive" if company.logo?
+        p.small
+          = company.description
+      .text-center.m-t-md
+        a.btn.btn-xs.btn-primary href="/companies/1/" = t('Company detail')
+        h5 = t('Company files')
+      ul.list-unstyled.project-files
+        li
+          a href=""
+            i.fa.fa-file
+            '
+            | Project_document.docx
+        li
+          a href=""
+            i.fa.fa-file-picture-o
+            '
+            | Logo_zender_company.jpg
+        li
+          a href=""
+            i.fa.fa-stack-exchange
+            '
+            | Email_from_Alex.mln
+        li
+          a href=""
+            i.fa.fa-file
+            '
+            | Contract_20_11_2014.docx
+      .text-center.m-t-md
+        a.btn.btn-xs.btn-primary href="/companies/1/edit" = t('Add logo')
+        '
+        a.btn.btn-xs.btn-primary href="/companies/1/edit" = t('Add photo')
+        '
+        a.btn.btn-xs.btn-primary href="/companies/1/edit" = t('Add attachment')

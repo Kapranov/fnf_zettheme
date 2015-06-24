@@ -1,0 +1,9 @@
+= simple_form_for @product do |f|
+  = f.error_notification
+  = f.input :name, :label => false, :placeholder => 'The name section', :hint => 'The title of your product', input_html: { style: 'width: 350px'}
+  .actions
+    = f.button :submit, value: 'Save', class: "btn btn-default btn-xs",:disable_with => 'Please wait ...'
+    = '|'
+    = link_to 'Show', @product, class: "btn btn-default btn-xs"
+    = '|'
+    = link_to 'Back', products_path, class: "btn btn-default btn-xs"

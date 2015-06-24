@@ -1,0 +1,27 @@
+h1 Список товаров
+
+table
+  thead
+    tr
+      th Категория
+      th Название
+      th Описание
+      th Код
+      th
+      th
+      th
+
+  tbody
+    - @foods.each do |food|
+      tr
+        td = food.category_id
+        td = food.name
+        td = food.description
+        td = food.barcode
+        td = link_to 'Show', food
+        td = link_to 'Edit', edit_food_path(food)
+        td = link_to 'Destroy', food, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'Создать наименование', new_food_path

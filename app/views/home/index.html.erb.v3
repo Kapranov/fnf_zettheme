@@ -1,0 +1,422 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="text-center m-t-lg">
+        <h1><%= @mainTitle %></h1>
+        <small><%= @mainDesc %></small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BEGIN -->
+<div class="row">
+
+  <div class="col-lg-3">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <span class="label label-success pull-right">Месяцы</span>
+        <h5>Доходы</h5>
+      </div>
+      <div class="ibox-content">
+        <h1 class="no-margins">4 886.20</h1>
+        <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
+        <small>Общая прибыль</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <span class="label label-info pull-right">Общие</span>
+        <h5>Заказы</h5>
+      </div>
+      <div class="ibox-content">
+        <h1 class="no-margins">275.800</h1>
+        <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
+        <small>Новые заказы</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <span class="label label-primary pull-right">На сегодня</span>
+        <h5>Посещения</h5>
+      </div>
+      <div class="ibox-content">
+        <h1 class="no-margins">16</h1>
+        <div class="stat-percent font-bold text-navy">44% <i class="fa fa-level-up"></i></div>
+        <small>Новыx посещений</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <span class="label label-danger pull-right">Значения</span>
+        <h5>Активность</h5>
+      </div>
+      <div class="ibox-content">
+        <h1 class="no-margins">86</h1>
+        <div class="stat-percent font-bold text-danger">38% <i class="fa fa-level-down"></i></div>
+        <small>В первый месяц</small>
+      </div>
+    </div>
+  </div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="wrapper wrapper-content animated fadeInUp">
+      <div class="ibox">
+        <div class="ibox-title">
+          <div class="ibox-tools">
+            <a href="" class="btn btn-primary btn-xs">Create new project</a>
+          </div>
+        </div>
+
+        <div class="ibox-content">
+          <div class="row m-b-sm m-t-sm">
+            <div class="col-md-1">
+              <button type="button" id="loading-example-btn" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i> Refresh</button>
+            </div>
+            <div class="col-md-11">
+              <div class="input-group">
+                <input type="text" placeholder="Search" class="input-sm form-control"> <span class="input-group-btn">
+                  <button type="button" class="btn btn-sm btn-primary"> Go!</button>
+                </span>
+              </div>
+            </div>
+          </div>
+
+<div class="project-list">
+<table class="table table-hover">
+<tbody>
+<tr>
+<td class="project-status">
+<span class="label label-primary">Active</span>
+</td>
+<td class="project-title">
+<br />
+<small>Created 14.08.2015</small>
+</td>
+<td class="project-completion">
+<small>Completion with: 48%</small>
+<div class="progress progress-mini">
+<div style="width: 48%;" class="progress-bar"></div>
+</div>
+</td>
+<td class="project-people">
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a3.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a1.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a2.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a4.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a5.jpg') %>"></a>
+</td>
+<td class="project-actions">
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+</td>
+</tr>
+<tr>
+<td class="project-status">
+<span class="label label-primary">Active</span>
+</td>
+<td class="project-title">
+<br />
+<small>Created 11.08.2015</small>
+</td>
+<td class="project-completion">
+<small>Completion with: 28%</small>
+<div class="progress progress-mini">
+<div style="width: 28%;" class="progress-bar"></div>
+</div>
+</td>
+<td class="project-people">
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a7.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a6.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a3.jpg') %>"></a>
+</td>
+<td class="project-actions">
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+</td>
+</tr>
+<tr>
+<td class="project-status">
+<span class="label label-default">Unactive</span>
+</td>
+<td class="project-title">
+<br />
+<small>Created 10.08.2015</small>
+</td>
+<td class="project-completion">
+<small>Completion with: 8%</small>
+<div class="progress progress-mini">
+<div style="width: 8%;" class="progress-bar"></div>
+</div>
+</td>
+<td class="project-people">
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a5.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a3.jpg') %>"></a>
+</td>
+<td class="project-actions">
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+</td>
+</tr>
+<tr>
+<td class="project-status">
+<span class="label label-primary">Active</span>
+</td>
+<td class="project-title">
+<br />
+<small>Created 22.07.2015</small>
+</td>
+<td class="project-completion">
+<small>Completion with: 83%</small>
+<div class="progress progress-mini">
+<div style="width: 83%;" class="progress-bar"></div>
+</div>
+</td>
+<td class="project-people">
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a2.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a3.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a1.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a7.jpg') %>"></a>
+</td>
+<td class="project-actions">
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+</td>
+</tr>
+<tr>
+<td class="project-status">
+<span class="label label-primary">Active</span>
+</td>
+<td class="project-title">
+<br />
+<small>Created 14.07.2015</small>
+</td>
+<td class="project-completion">
+<small>Completion with: 97%</small>
+<div class="progress progress-mini">
+<div style="width: 97%;" class="progress-bar"></div>
+</div>
+</td>
+<td class="project-people">
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a4.jpg') %>"></a>
+</td>
+<td class="project-actions">
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+</td>
+</tr>
+<tr>
+<td class="project-status">
+<span class="label label-primary">Active</span>
+</td>
+<td class="project-title">
+<br />
+<small>Created 14.08.2015</small>
+</td>
+<td class="project-completion">
+<small>Completion with: 48%</small>
+<div class="progress progress-mini">
+<div style="width: 48%;" class="progress-bar"></div>
+</div>
+</td>
+<td class="project-people">
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a1.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a2.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a4.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a5.jpg') %>"></a>
+</td>
+<td class="project-actions">
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+</td>
+</tr>
+<tr>
+<td class="project-status">
+<span class="label label-primary">Active</span>
+</td>
+<td class="project-title">
+<br />
+<small>Created 11.08.2015</small>
+</td>
+<td class="project-completion">
+<small>Completion with: 28%</small>
+<div class="progress progress-mini">
+<div style="width: 28%;" class="progress-bar"></div>
+</div>
+</td>
+<td class="project-people">
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a7.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a6.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a3.jpg') %>"></a>
+</td>
+<td class="project-actions">
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+</td>
+</tr>
+<tr>
+<td class="project-status">
+<span class="label label-default">Unactive</span>
+</td>
+<td class="project-title">
+<br />
+<small>Created 10.08.2015</small>
+</td>
+<td class="project-completion">
+<small>Completion with: 8%</small>
+<div class="progress progress-mini">
+<div style="width: 8%;" class="progress-bar"></div>
+</div>
+</td>
+<td class="project-people">
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a5.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a3.jpg') %>"></a>
+</td>
+<td class="project-actions">
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+</td>
+</tr>
+<tr>
+<td class="project-status">
+<span class="label label-primary">Active</span>
+</td>
+<td class="project-title">
+<br />
+<small>Created 22.07.2015</small>
+</td>
+<td class="project-completion">
+<small>Completion with: 83%</small>
+<div class="progress progress-mini">
+<div style="width: 83%;" class="progress-bar"></div>
+</div>
+</td>
+<td class="project-people">
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a2.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a3.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a1.jpg') %>"></a>
+</td>
+<td class="project-actions">
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+</td>
+</tr>
+<tr>
+<td class="project-status">
+<span class="label label-primary">Active</span>
+</td>
+<td class="project-title">
+<br />
+<small>Created 14.07.2015</small>
+</td>
+<td class="project-completion">
+<small>Completion with: 97%</small>
+<div class="progress progress-mini">
+<div style="width: 97%;" class="progress-bar"></div>
+</div>
+</td>
+<td class="project-people">
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a4.jpg') %>"></a>
+</td>
+<td class="project-actions">
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+</td>
+</tr>
+<tr>
+<td class="project-status">
+<span class="label label-primary">Active</span>
+</td>
+<td class="project-title">
+<br />
+<small>Created 11.08.2015</small>
+</td>
+<td class="project-completion">
+<small>Completion with: 28%</small>
+<div class="progress progress-mini">
+<div style="width: 28%;" class="progress-bar"></div>
+</div>
+</td>
+<td class="project-people">
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a7.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a6.jpg') %>"></a>
+<a href=""><img alt="image" class="img-circle" src="<%= image_path('a3.jpg') %>"></a>
+</td>
+<td class="project-actions">
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+<a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Заказы</h5>
+          <div class="pull-right">
+            <div class="btn-group">
+              <button type="button" class="btn btn-xs btn-white active">На сегодня</button>
+              <button type="button" class="btn btn-xs btn-white">За месяцы</button>
+              <button type="button" class="btn btn-xs btn-white">Общие</button>
+            </div>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-lg-9">
+              <div class="flot-chart">
+                <div class="flot-chart-content" id="flot-dashboard-chart"></div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <ul class="stat-list">
+                <li>
+                  <h2 class="no-margins">2,346</h2>
+                  <small>Сумма заказов за период</small>
+                  <div class="stat-percent">48% <i class="fa fa-level-up text-navy"></i></div>
+                  <div class="progress progress-mini">
+                    <div style="width: 48%;" class="progress-bar"></div>
+                  </div>
+                </li>
+                <li>
+                  <h2 class="no-margins ">4,422</h2>
+                  <small>Заказы за последний месяц</small>
+                  <div class="stat-percent">60% <i class="fa fa-level-down text-navy"></i></div>
+                  <div class="progress progress-mini">
+                    <div style="width: 60%;" class="progress-bar"></div>
+                  </div>
+                </li>
+                <li>
+                  <h2 class="no-margins ">9,180</h2>
+                  <small>Месячная прибыль от заказов</small>
+                  <div class="stat-percent">22% <i class="fa fa-bolt text-navy"></i></div>
+                  <div class="progress progress-mini">
+                    <div style="width: 22%;" class="progress-bar"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div
+
+<!-- END -->

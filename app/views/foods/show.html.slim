@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Category:
+  = @food.category_id
+p
+  strong Name:
+  = @food.name
+p
+  strong Description:
+  = @food.description
+p
+  strong Barcode:
+  = @food.barcode
+
+= link_to 'Edit', edit_food_path(@food)
+'|
+= link_to 'Back', foods_path

@@ -1,0 +1,42 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-sm-4
+    h2 = t('Companies')
+    ol.breadcrumb
+      li
+        a[href="<%= url_for :controller => 'companies', :action => 'index' %>"] Hello
+      li.active
+        strong = t('Companies')
+
+h1 = t('Listing companies')
+
+table
+  thead
+    tr
+      th = t('Name')
+      th = t('Description')
+      th = t('Status')
+      th = t('Representatives')
+      th = t('Logo')
+      th = t('Avatar')
+      th = t('Attachment')
+      th
+      th
+      th
+
+  tbody
+    - @companies.each do |company|
+      tr
+        td = company.name
+        td = company.description
+        td = company.status
+        td = company.representatives
+        td = company.logo
+        td = company.avatar
+        td = company.attachment
+        td = link_to t('Show'), company
+        td = link_to t('Edit'), edit_company_path(company)
+        td = link_to t('Destroy'), company, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to t('New Company'), new_company_path

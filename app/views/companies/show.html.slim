@@ -1,0 +1,49 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-sm-4
+    h2 = t('Companies')
+    ol.breadcrumb
+      li
+        a href="#{url_for :controller => 'companies', :action => 'index'}" = t('Home')
+      li.active
+        strong = t('Show Company')
+.wrapper.wrapper-content.animated.fadeInUp
+  .row
+    .col-lg-12
+      .ibox.float-e-margins
+        .ibox-title
+          h5 = t('Company detail')
+          .ibox-tools
+            a.collapse-link
+              i.fa.fa-chevron-up
+            a[class="dropdown-toggle" data-toggle="dropdown" href="#"]
+              i.fa.fa-wrench
+            ul.dropdown-menu.dropdown-user
+              li
+                a href="#" Config option 1
+              li
+                a href="#" Config option 2
+            a.close-link
+              i.fa.fa-times
+          .ibox-content
+            table.table
+              thead
+                tr
+                  th = t('Name')
+                  th = t('Description')
+                  th = t('Status')
+                  th = t('Logo')
+                  th = t('Avatar')
+                  th = t('Attachment')
+              tbody
+                tr
+                  th = @company.name
+                  th = @company.description
+                  th = @company.status
+                  th = @company.representatives
+                  th = @company.logo
+                  th = @company.avatar
+                  th = @company.attachment
+
+            = link_to t('Edit'), edit_company_path(@company), class: 'btn btn-primary'
+            '
+            = link_to t('Back'), companies_path, class: 'btn btn-primary'

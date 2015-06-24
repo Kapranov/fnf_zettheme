@@ -1,0 +1,186 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-sm-4
+    h2 = t('Companies')
+    ol.breadcrumb
+      li
+        a href="#{url_for :controller => 'companies', :action => 'index'}" = t('Home')
+      li.active
+        strong = t('Companies')
+
+.row
+  .col-lg-9
+    .wrapper.wrapper-content.animated.fadeInUp
+      .ibox
+        .ibox-content
+          .row
+            .col-lg-12
+              .m-b-md
+                /- @companies.each do |company|
+                /a href="#{url_for :controller => 'companies', :action => 'new'}" class="btn btn-white btn-xs pull-right" = t('Edit')
+                /a href="#{url_for @company}" class="btn btn-white btn-xs pull-right" = t('Edit')
+                /= link_to t('Edit'), edit_company_path(company), class: "btn btn-white btn-xs pull-right"
+                /= link_to t('Edit'), :action => :companies, :id => @company.id
+                /h2 = company.name
+                /= link_to t('Edit'), :action => :check_users, :id => @company.id
+                /
+              .dl-horizontal
+                dt Status:
+                dd
+                  span class="label label-primary" Active
+          .row
+            .col-lg-5
+              .dl-horizontal
+                dt Created by:
+                dd = current_user.name.to_s
+                dt Messages:
+                dd 162
+                dt Client:
+                dd
+                  a[href="#" class="text-navy"] Zender Company
+                dt Version:
+                dd v1.4.2
+            .col-lg-7#cluster_info
+              dl.dl-horizontal
+                dt Last Updated:
+                dd 16.06.2015 12:15:57
+                dt Created:
+                dd 10.05.2015 23:36:57
+                dt Participants:
+                dd.project-people
+                  a href=""
+                    img alt="image" class="img-circle" src="#{image_path('a3.jpg')}"
+                  a href=""
+                    img alt="image" class="img-circle" src="#{image_path('a1.jpg')}"
+                  a href=""
+                    img alt="image" class="img-circle" src="#{image_path('a2.jpg')}"
+                  a href=""
+                    img alt="image" class="img-circle" src="#{image_path('a4.jpg')}"
+                  a href=""
+                    img alt="image" class="img-circle" src="#{image_path('a5.jpg')}"
+          .row
+            .col-lg-12
+              dl.dl-horizontal
+                dt Completed:
+                dd
+                  div[class="progress progress-striped active m-b-sm"]
+                    div[style="width: 60%;" class="progress-bar"]
+                  small Project completed in
+                  '
+                  | 60% Remaining close the project, sign a contract and invoice.
+
+          .row.m-t-sm
+            .col-lg-12
+              .panel.blank-panel
+                .panel-heading
+                  .panel-options
+                    ul.nav.nav-tabs
+                      li.active
+                        a[href="#tab-1" data-toggle="tab"] Users messages
+                      li
+                        a[href="#tab-2" data-toggle="tab"] Last activity
+                .panel-body
+                  .tab-content
+                    .tab-pane.active#tab-1
+                      .feed-activity-list
+                        .feed-element
+                          a[href="#" class="pull-left"]
+                            img[alt="image" class="img-circle" src="#{image_path('a2.jpg')}"]
+                          .media-body
+                            small.pull-right 2h ago
+                            strong Mark Johnson
+                            '
+                            | posted message on
+                            strong Monica Smith
+                            '
+                            | site.
+                            br
+                            small.text-muted Today 2:10 pm - 12.06.2015
+                            .well
+                              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                              Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                        .feed-element
+                          a[href="#" class="pull-left"]
+                            img[alt="image" class="img-circle" src="#{image_path('a3.jpg')}"]
+                          .media-body
+                            small.pull-right 2h ago
+                            strong Janet Rosowski
+                            '
+                            | add 1 photo on
+                            '
+                            | Monica Smith
+                            '
+                            |.
+                            br
+                            small.text-muted 2 days ago at 8:30am
+
+                    .tab-pane#tab-2
+                      table.table.table-striped
+                        thead
+                          tr
+                            th Status
+                            th Title
+                            th Start Time
+                            th End Time
+                            th Comments
+                        tbody
+                          tr
+                            td
+                              span.label.label-primary
+                                i.fa.fa-check
+                                '
+                                | Completed
+                            td Create project in webapp
+                            td 12.07.2014 10:10:1
+                            td 14.07.2014 10:16:36
+                            td
+                              p.small
+                                Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable.
+                          tr
+                            td
+                              span.label.label-primary
+                                i.fa.fa-check
+                                '
+                                | Accepted
+                            td Create project in webapp
+                            td 12.07.2014 10:10:1
+                            td 14.07.2014 10:16:36
+                            td
+                              p.small
+                                Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable.
+  .col-lg-3
+    .wrapper.wrapper-content
+      h4 = t('Company description')
+      - @companies.each do |company|
+        = image_tag company.logo_url.to_s, class: "img-responsive" if company.logo?
+        p.small
+          = company.description
+      .text-center.m-t-md
+        a.btn.btn-xs.btn-primary href="#" = t('Company detail')
+        h5 = t('Company files')
+      ul.list-unstyled.project-files
+        li
+          a href=""
+            i.fa.fa-file
+            '
+            | Project_document.docx
+        li
+          a href=""
+            i.fa.fa-file-picture-o
+            '
+            | Logo_zender_company.jpg
+        li
+          a href=""
+            i.fa.fa-stack-exchange
+            '
+            | Email_from_Alex.mln
+        li
+          a href=""
+            i.fa.fa-file
+            '
+            | Contract_20_11_2014.docx
+      .text-center.m-t-md
+        a.btn.btn-xs.btn-primary href="#" = t('Add logo')
+        '
+        a.btn.btn-xs.btn-primary href="#" = t('Add photo')
+        '
+        a.btn.btn-xs.btn-primary href="#" = t('Add attachment')

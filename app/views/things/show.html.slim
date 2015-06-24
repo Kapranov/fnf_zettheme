@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Category:
+  = @thing.category_id
+p
+  strong Name:
+  = @thing.name
+p
+  strong Description:
+  = @thing.description
+p
+  strong Barcode:
+  = @thing.barcode
+
+= link_to 'Edit', edit_thing_path(@thing)
+'|
+= link_to 'Back', things_path

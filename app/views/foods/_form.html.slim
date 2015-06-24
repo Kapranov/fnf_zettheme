@@ -1,0 +1,11 @@
+= simple_form_for(@food) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :category, collection: Category.all, label: false, prompt: '- Выберете категории -', input_html: {style: 'width: 400px'}
+    = f.input :name
+    = f.input :description
+    = f.input :barcode
+
+  .form-actions
+    = f.button :submit

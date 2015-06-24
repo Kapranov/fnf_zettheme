@@ -1,0 +1,52 @@
+.page-template-page-homepage
+  .section id="home-index" style="display: block;"
+    .wrapper-content.text-center.animated.fadeInRight
+      .row
+        .col-lg-12
+          .welcome-box.animate.pulse
+            - if user_signed_in?
+              - if current_user.try(:admin?)
+                div style="margin-top:25px"
+                h3 Welcome Administrator!
+                - if current_user.avatar.url.present?
+                  = image_tag(current_user.avatar.url, size: "80x80", class: "img-circle")
+                - if current_user.name.present?
+                  span.clear
+                  span.block.m-t-xs
+                    strong.font-bold
+                      = current_user.name.to_s
+                      br
+                      = current_user.email.to_s
+                br
+                p.badge.badge-warning
+                  = link_to 'Users:', users_path
+                  '
+                  = User.count
+                  '
+                  |
+                    registered
+              - else
+                div style="margin-top:25px"
+                h3 Welcome #{current_user.name.to_s} !
+                - if current_user.avatar.url.present?
+                  = image_tag(current_user.avatar.url, size: "80x80", class: "img-circle")
+                - else
+                  = image_tag 'images.png', size: "80x75", class: "img-circle"
+                h6 Your role: #{current_user.role.to_s}
+                h5 #{current_user.email.to_s}
+
+                p.badge.badge-warning This is your tablo
+            - else
+              h1 class="logo-name" FnF
+              h3 = t("Catalog of products")
+              = link_to ' ', new_user_session_path, :class => "fa fa-user fa-5x"
+              br
+              label.badge.badge-warning = t('Please login in')
+              p class="m-t"
+                small Zettheme Inc.
+                '
+                small = t('we app framework')
+                '
+                | &copy; 2015
+
+    = render 'layouts/visitor_footer'

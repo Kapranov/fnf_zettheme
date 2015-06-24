@@ -1,0 +1,58 @@
+body.gray-bg.pace-done
+  div style="margin-top:100px;"
+  .row
+    .col-lg-1
+    .col-lg-4
+      .widget-head-color-box.navy-bg.p-lg.text-center
+        .m-b-md
+          - if current_user.name.present?
+            h2.font-bold.no-margins = current_user.name.to_s
+            br
+            = current_user.email.to_s
+        - if current_user.avatar.url.present?
+          = image_tag(current_user.avatar.url, size: "80x80", class: "img-circle circle-border")
+        - else
+          = image_tag 'images.png', size: "30x25", class: "img-circle"
+      .widget-text-box
+        h4.media-heading #{@user.name if @user.name}
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        .text-right
+          a.btn.btn-xs.btn-white
+            i.fa.fa-thumbs-up Like
+          a.btn.btn-xs.btn-primary
+            i.fa--fa-heart Love
+    .col-lg-6
+      .widget.lazur-bg.p-xl
+        h3 Account User
+        table
+          tr
+            td Name:
+            td
+            td #{@user.name if @user.name}
+          tr
+            td Role:
+            td[style="width:15px"]
+            td #{@user.role if @user.role}
+          tr
+            td Email:
+            td
+            td #{@user.email if @user.email}
+          tr
+            td Avatar url:
+            td
+            td #{@user.avatar if @user.avatar}
+      br
+      .widget.navy-bg.no-padding
+        .p-m
+          h1.m-xs $1,540
+          h3.font-bold.no-margins Annual income
+          small Income form project Alpha
+      br
+      .widget.red-bg.p-lg.text-center
+        .m-b-md
+          i.fa.fa-bell.fa-4x
+          h1.m-xs 47
+          h3.font-bold.no-margins Notification
+          small We detect the error
+      br
+    .col-lg-1

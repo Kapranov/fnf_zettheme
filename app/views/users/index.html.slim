@@ -1,0 +1,11 @@
+body.gray-bg.pace-done
+  div style="margin-top:65px"
+    .container
+      .row
+        h3 Users
+        .column
+          table.table
+            tbody
+              - @users.each do |user|
+                tr
+                  = render user

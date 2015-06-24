@@ -1,0 +1,111 @@
+.row
+  .border-bottom
+    nav.navbar.navbar-static-top.white-bg[role="navigation" style="margin-bottom: 0"]
+      .navbar-header
+        a.navbar-minimalize.minimalize-styl-2.btn.btn-primary[href="#"]
+          i[class="fa fa-bars"]
+        form role="search" class="navbar-form-custom" method="post" action="/"
+          .form-group
+            input type="text" placeholder="#{t('Search')}" class="form-control" name="top-search" id="top-search"
+      ul[class="nav navbar-top-links navbar-right"]
+        li
+          span.m-r-sm.text-muted.welcome-message = t('Your message')
+        li.dropdown
+          a[class="dropdown-toggle count-info" data-toggle="dropdown" href="#"]
+            i.fa.fa-envelope
+            span.label.label-warning 16
+          ul.dropdown-menu.dropdown-messages
+            li
+              .dropdown-messages-box
+                a.pull-left href="#"
+                  img[alt="image" class="img-circle" src="#{image_path('a7.jpg')}"]
+                .media-body
+                  small.pull-right 46h ago
+                  strong Сергей Антонов
+                  '
+                  | сообщение
+                  '
+                  strong Томаре Новиковой
+                  br
+                  small.text-muted 3 назад в 19:58 - 16.06.2015
+            li.divider
+            li
+              .dropdown-messages-box
+                a.pull-left href="#"
+                  img[alt="image" class="img-circle" src="#{image_path('a4.jpg')}"]
+                .media-body
+                  small.pull-right.text-navy 5h ago
+                  strong Юрий Арлинский
+                  '
+                  | сообщение
+                  '
+                  strong Виктории Грушко
+                  br
+                  small.text-muted Вчера 13:21 - 17.06.2015
+            li.divider
+            li
+              .dropdown-messages-box
+                a.pull-left href="#"
+                  img[alt="image" class="img-circle" src="#{image_path('profile.jpg')}"]
+                .media-body
+                  small.pull-right 23h ago
+                  strong Анжела Воронина
+                  '
+                  | предложение
+                  '
+                  strong Димы Лифшица
+                  br
+                  small.text-muted 2 дня назад 14:30 - 16.06.2015
+            li.divider
+            li
+              .text-center.link-block
+                a href="#"
+                  i.fa.fa-envelope
+                  '
+                  strong = t('Read All Messages')
+        li.dropdown
+          a[class="dropdown-toggle count-info" data-toggle="dropdown" href="#"]
+            i.fa.fa-bell
+            span.label.label-primary 8
+          ul.dropdown-menu.dropdown-alerts
+            li
+              a href="#"
+                div
+                  i.fa.fa-envelope.fa-fw
+                  '
+                  | У вас 16 сообщений
+                  span.pull-right.text-muted.small 4 минуты назад
+            li.divider
+            li
+              a href="#"
+                div
+                  i.fa.fa-twitter.fa-fw
+                  '
+                  | 3 изменения  в панели
+                  span.pull-right.text-muted.small 12 минут назад
+            li.divider
+            li
+              a href="#"
+                div
+                  i.fa.fa-upload.fa-fw
+                  '
+                  | Добавлен каталог
+                  span.pull-right.text-muted.small 4 минут назад
+            li.divider
+        li
+          a.right-sidebar-toggle
+            i.fa.fa-tasks
+
+        - if user_signed_in?
+          - if current_user.try(:admin?)
+            li
+              = link_to '', users_path, :class => "fa fa-users"
+            li
+              = link_to ' ', '/admin', :class => 'fa fa-gears'
+        - if user_signed_in?
+          li
+            = link_to '', edit_user_registration_path, :class => "fa fa-user-secret"
+          li
+            = link_to ' ', '/dashboard', :class => "fa fa-home"
+          li
+            = link_to t('Logout'), destroy_user_session_path, :class => "fa fa-sign-out", :method=>'delete'

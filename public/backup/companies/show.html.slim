@@ -1,0 +1,30 @@
+p#notice = notice
+
+p
+  strong User:
+  /= @company.user
+p
+  strong Name:
+  /= @company.name
+p
+  strong Description:
+  = @company.description
+p
+  strong Status:
+  = @company.status
+p
+  strong Representatives:
+  = @company.representatives
+p
+  strong Logo:
+  = @company.logo
+p
+  strong Avatar:
+  = @company.avatar
+p
+  strong Attachment:
+  = @company.attachment
+
+= link_to t('Edit'), edit_company_path(@company)
+'|
+= link_to t('Back'), companies_path

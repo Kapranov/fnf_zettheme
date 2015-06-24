@@ -1,0 +1,15 @@
+div style="padding-top:25px" 
+
+.alert.alert-warning
+  p
+    | Рады представить Вашему вниманию удобный и быстрый способ хранения товаров!
+
+table.table
+  tr
+    td Название
+    td
+      =@product.name
+
+= link_to t('Edit'), edit_product_path(@product)
+= '|'
+= link_to t('Back'), products_path

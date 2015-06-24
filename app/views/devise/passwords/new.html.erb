@@ -1,0 +1,19 @@
+<body class="gray-bg pace-done">
+  <div class="middle-box text-center loginscreen  animated fadeInDown">
+    <div class="authform">
+      <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :role => 'form'}) do |f| %>
+        <div>
+          <h1 class="logo-name">FnF</h1>
+        </div>
+        <h3>Forgot your password?</h3>
+        <p>We'll send password reset instructions.</p>
+        <%= devise_error_messages! %>
+        <div class="form-group">
+          <%= f.email_field :email, :autofocus => true, class: 'form-control', placeholder: 'Your registered email' %>
+        </div>
+         <%= f.submit 'Reset Password', :class => 'right btn btn-sm btn-danger btn-block' %>
+      <% end %>
+    </div>
+    <p class="m-t"> <small>zettheme Inc. we app framework &copy; 2015</small> </p>
+  </div>
+</body>

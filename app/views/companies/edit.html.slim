@@ -1,0 +1,11 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-sm-4
+    h2 = t('Companies')
+    ol.breadcrumb
+      li
+        a href="#{url_for :controller => 'companies', :action => 'index'}" = t('Home')
+      li.active
+        strong = t('Editing company')
+.row
+  .wrapper.wrapper-content.animated.fadeInUp
+    == render 'form'

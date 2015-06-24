@@ -1,0 +1,17 @@
+= simple_form_for(@company) do |f|
+  = f.error_notification
+
+  .form-inputs
+    /= f.association :user
+    = f.input :name, label: t('Name')
+    = f.input :description, label: t('Description')
+    = f.input :status, label: t('Status')
+    = f.input :representatives, label: t('Representatives')
+    = f.input :logo, label: t('Logo')
+    = f.input :avatar, label: t('Avatar')
+    = f.input :attachment, label: t('Attachment')
+
+  .form-actions
+    = f.button :submit, value: t('Save')
+    '
+    = link_to t('Back'), companies_path, class: "btn btn-default"

@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    meta[name="description" content="#{content_for?(:description) ? yield(:description) : "FnF"}"]
+    title
+      = content_for?(:title) ? yield(:title) : "Catalog"
+    == stylesheet_link_tag 'application', media: 'all'
+    == javascript_include_tag 'application'
+    == csrf_meta_tags
+  body
+    #wrapper
+      == render 'layouts/dashboard_navigation'
+    #page-wrapper.gray-bg
+      == render 'layouts/dashboard_topnavbar'
+      .row
+        .col-xs-6
+          h2 = link_to "Shopping chart", root_path
+        .col-xs-6.text-right
+          h1.cart-text = render 'layouts/cart_text'
+      hr
+      == yield
+      == render 'layouts/dashboard_footer'

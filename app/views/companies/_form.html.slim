@@ -1,0 +1,56 @@
+.row
+  .col-lg-12
+    .tabs-container
+      ul.nav.nav-tabs
+        li.active
+          a[data-toggle="tab" href="#tab-1"] Product info
+        li
+          a[data-toggle="tab" href="#tab-2"] Data
+        li
+          a[data-toggle="tab" href="#tab-3"] Discount
+        li
+          a[data-toggle="tab" href="#tab-4"] Images
+      .tab-content
+        #tab-1.tab-pane.active
+          .panel-body
+            fieldset.form-horizontal
+              .form-group
+                label.col-sm-2.control-label Name:
+                .col-sm-10
+                  input type="text" class="form-control" placeholder="Product name"
+              .form-group
+                label class="col-sm-2 control-label" Price:
+
+br
+= simple_form_for(@company, :html => { :multipart => true })  do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name, label: t('Name')
+    = f.input :description, label: t('Description')
+    = f.input :status, label: t('Status')
+    = f.input :representatives, label: t('Representatives')
+    table
+      tr
+        th
+          = f.label t('Logo')
+          '
+          = f.file_field :logo
+          = f.hidden_field :avatar_cache
+        th
+          = f.label t('Avatar')
+          '
+          = f.file_field :avatar
+          = f.hidden_field :avatar_cache
+        th
+          = f.label t('Attachment')
+          '
+          = f.file_field :attachment
+          = f.hidden_field :attachment_cache
+    br
+  .form-actions
+    = f.button :submit, class: "btn btn-primary", value: t('Save')
+    '
+    = link_to t('Show'), @company, class: "btn btn-primary"
+    '
+    = link_to t('Back'), companies_path, class: "btn btn-primary"

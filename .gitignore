@@ -1,0 +1,6 @@
+/.bundle
+/vendor/bundle/
+/vendor/ruby/
+/log/*
+/tmp/*
+/config/application.yml
